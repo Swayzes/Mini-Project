@@ -16,8 +16,8 @@ Your task is to allow merchants to automatically update their bank account detai
 4. Design a UI which consumes your API endpoint(s)
 5. Implement your UI
 6. Bonus: implement API calls for external services (it’s OK to mock these based on documentation if you can’t get API keys), e.g.:
-  - Notify the merchant that their account information has been updated (e.g. via Twilio)
-  - Look up the bank information using a sort code lookup API
-  - Run a Confirmation of Payee check (for example, via Modulr or SurePay)
+    - Notify the merchant that their account information has been updated (e.g. via Twilio)
+    - Look up the bank information using a sort code lookup API
+    - Run a Confirmation of Payee check (for example, via Modulr or SurePay)
 
 Requirements:
