@@ -20,4 +20,11 @@ Your task is to allow merchants to automatically update their bank account detai
     - Look up the bank information using a sort code lookup API
     - Run a Confirmation of Payee check (for example, via Modulr or SurePay)
 
-Requirements:
+Steps:
+1. Learn how to create a REST API with endpoints (Node.js)
+2. Design & Implement API in VS code
+3. Do some automated tests for API (with Postman probably, Look at other methods as well)
+4. Design and implement a UI with Vue.js probably
+5. Bonus stuff
+
+Sources used:
