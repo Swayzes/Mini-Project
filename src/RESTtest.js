@@ -8,8 +8,13 @@ const PORT = process.env.PORT || 3000;
 
 //Shows the port the server is connecting with
 app.listen(PORT, () =>{
-    console.lot("Server listening on PORT: ", port)
+    console.log("Server listening on PORT: ", PORT)
 });
 
 //Defines an endpoint
-app.get("/status", request, response)
+app.get("/status", (request, response) => {
+    const status = {
+        "Status":"Running"
+    };
+    response.send(status);
+});
