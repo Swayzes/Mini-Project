@@ -18,3 +18,9 @@ app.get("/status", (request, response) => {
     };
     response.send(status);
 });
+
+app.get("/user", (request, response) => {
+    const user = {
+        "User":"Test user"
+    }
+})
