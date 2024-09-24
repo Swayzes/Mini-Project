@@ -27,4 +27,5 @@ Steps:
 4. Design and implement a UI with Vue.js probably
 5. Bonus stuff
 
-Sources used:
+## Instructions
+1. 

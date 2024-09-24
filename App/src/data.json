@@ -1,0 +1,135 @@
+[
+    {
+      "id": 1,
+      "accountHolder": {
+        "name": "Alice Brown",
+        "accountType": "Individual Saver",
+        "dateOfBirth": "1992-04-10",
+        "contactInformation": {
+          "email": "alice.brown@example.com",
+          "phone": "+1234567891"
+        }
+      },
+      "accountDetails": {
+        "accountNumber": "123456789",
+        "routingNumber": "987654321",
+        "balance": 12500.00,
+        "currency": "USD",
+        "accountOpenedDate": "2021-01-15",
+        "accountStatus": "Active"
+      },
+      "transactionHistory": []
+    },
+    {
+      "id": 2,
+      "accountHolder": {
+        "name": "Michael Green",
+        "accountType": "Small Business Owner",
+        "dateOfBirth": "1983-11-25",
+        "contactInformation": {
+          "email": "michael.green@business.com",
+          "phone": "+1987654322"
+        }
+      },
+      "accountDetails": {
+        "accountNumber": "234567890",
+        "routingNumber": "876543210",
+        "balance": 35000.50,
+        "currency": "USD",
+        "accountOpenedDate": "2017-06-10",
+        "accountStatus": "Active"
+      },
+      "transactionHistory": [
+        {
+          "date": "2024-09-01",
+          "description": "Client Payment",
+          "amount": 5000.00,
+          "transactionType": "Credit"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "accountHolder": {
+        "name": "Sarah Lee",
+        "accountType": "Retiree",
+        "dateOfBirth": "1950-08-05",
+        "contactInformation": {
+          "email": "sarah.lee@example.com",
+          "phone": "+1230984568"
+        }
+      },
+      "accountDetails": {
+        "accountNumber": "345678901",
+        "routingNumber": "765432109",
+        "balance": 18000.75,
+        "currency": "USD",
+        "accountOpenedDate": "2010-05-20",
+        "accountStatus": "Active"
+      },
+      "transactionHistory": [
+        {
+          "date": "2024-08-15",
+          "description": "Pension Deposit",
+          "amount": 2000.00,
+          "transactionType": "Credit"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "accountHolder": {
+        "name": "David Wilson",
+        "accountType": "Student",
+        "dateOfBirth": "2000-09-30",
+        "contactInformation": {
+          "email": "david.wilson@student.com",
+          "phone": "+1987654323"
+        }
+      },
+      "accountDetails": {
+        "accountNumber": "456789012",
+        "routingNumber": "654321098",
+        "balance": 800.00,
+        "currency": "USD",
+        "accountOpenedDate": "2022-08-15",
+        "accountStatus": "Active"
+      },
+      "transactionHistory": [
+        {
+          "date": "2024-09-10",
+          "description": "Tuition Payment",
+          "amount": 500.00,
+          "transactionType": "Debit"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "accountHolder": {
+        "name": "Emily Davis",
+        "accountType": "Freelancer",
+        "dateOfBirth": "1988-02-12",
+        "contactInformation": {
+          "email": "emily.davis@freelance.com",
+          "phone": "+1234567894"
+        }
+      },
+      "accountDetails": {
+        "accountNumber": "567890123",
+        "routingNumber": "543210987",
+        "balance": 9500.25,
+        "currency": "USD",
+        "accountOpenedDate": "2019-11-05",
+        "accountStatus": "Active"
+      },
+      "transactionHistory": [
+        {
+          "date": "2024-09-12",
+          "description": "Client Invoice Payment",
+          "amount": 1500.00,
+          "transactionType": "Credit"
+        }
+      ]
+    }
+  ]
