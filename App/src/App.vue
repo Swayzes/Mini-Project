@@ -15,16 +15,20 @@ import axios from 'axios';
 //   })
 // }
 
-function verifyAcc(event) {
-  axios.get("http://localhost:5000/")
-  .then(function(response){
-    console.log(response);
-    var users = JSON.parse( response.data );
-    alert(response);
-  })
-  .catch(function (error) {
-        console.log(error);
-  })
+async function verifyAcc(event) {
+  const result = await axios
+                    .get("http://localhost:5000/")
+                    .then(result => console.log('Fulfilled'))
+                    .catch( error =>  console.log(error));
+  console.log(result.data)
+  // .then(function(response){
+  //   console.log(response);
+  //   var users = response.data;
+  //   alert(response);
+  // })
+  // .catch(function (error) {
+  //       console.log(error);
+  // })
 }
 
 function changeDetails(event) {
@@ -68,7 +72,9 @@ export default {
 	  <input id="nameID"> Name </input>
 	  <input id="accNumID">Account number</input>
     <button id="verifyBtn" @click="verifyAcc">Verify</button>
-    
+    <div id="accountSect" class="hidden">
+      {{ info }}
+    </div>
     <!-- Dropdown of options -->
     <div id="changeSect" class="hidden">
       <select id="Accountholder options">

@@ -19,3 +19,12 @@ Your task is to allow merchants to automatically update their bank account detai
     - Notify the merchant that their account information has been updated (e.g. via Twilio)
     - Look up the bank information using a sort code lookup API
     - Run a Confirmation of Payee check (for example, via Modulr or SurePay)
+
+## Instructions
+1. Load up REST API with 'node REST.js' in terminal
+2. Run App with 'npm run dev'
+3. Open page and enter your name and account details, click on button to verify user
+4. User picks from the dropdown what detail they want to update
+5. User Inputs in the text beside the changed value, click on the button
+6. Details should now be updated
+
