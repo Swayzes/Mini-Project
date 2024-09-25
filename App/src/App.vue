@@ -1,23 +1,48 @@
-<!-- --JS Stuff
+--JS Stuff
 <script setup>
 import HelloWorld from './components/HelloWorld.vue'
 import TheWelcome from './components/TheWelcome.vue'
-</script> -->
-
-<script>
 import axios from 'axios';
 
-export default {
-  data() {
-    return {
-      posts: [],
-      errors: []
-    }
-  },
+// function updateDetails(params) {
+//   axios.get("http://127.0.0.1:5000/")
+//   .then(function(response){
+//     console.log(response);
+//     alert(response);
+//   })
+//   .catch(function (error) {
+//         console.log(error);
+//   })
+// }
 
-  // Fetches posts when the component is created.
+function verifyAcc(event) {
+  axios.get("http://localhost:5000/")
+  .then(function(response){
+    console.log(response);
+    var users = JSON.parse( response.data );
+    alert(response);
+  })
+  .catch(function (error) {
+        console.log(error);
+  })
+}
+
+function changeDetails(event) {
+  console.log(document.getElementById("change").value);
+  alert("Are you sure?");
+}
+</script>
+
+<!-- <script>
+import axios from 'axios';
+
+document.getElementById("nameID")
+
+export default {
+  name:'accountdetails',
+    // Fetches posts when the component is created.
   created() {
-    axios.get(`http://127.0.0.1:5000/`)
+  axios.get(`http://127.0.0.1:5000/`)
     .then(response => {
       // JSON responses are automatically parsed.
       this.posts = response.data
@@ -25,29 +50,51 @@ export default {
     .catch(e => {
       this.errors.push(e)
     })
-  }
+  },
+  data() {
+    return {
+      errors: []
+    }
+  },
+
 }
-</script>
+</script> -->
 
 --HTML Stuff
 <template>
   <h1>Bank Details</h1>
-  <p>Enter your Name and account number</p>
-	<input> Name </input>
-	<input> Account number </input>
-  
-  <!-- Dropdown of options -->
-  <input > </input>
-  <button>
-  Click here to update details
-  <!--  Add alert here for are you sure?  -->
-  </button>
+  <main>
+    <p>Enter your Name and account number</p>
+	  <input id="nameID"> Name </input>
+	  <input id="accNumID">Account number</input>
+    <button id="verifyBtn" @click="verifyAcc">Verify</button>
+    
+    <!-- Dropdown of options -->
+    <div id="changeSect" class="hidden">
+      <select id="Accountholder options">
+        <option id="accountName">Account Name</option>
+        <option id="accountType">Account Type</option>
+        <option id="dateOfBirth">DoB</option>
+        <option id="email">email</option>
+        <option id="phone">phone</option>
+      </select>
+      <input id="change">Enter the change</input>
+      <button id="changeBtn" @click="changeDetails">
+      Click here to update details
+      </button>
+    </div>
+    
+  </main>
 </template>
 
 --CSS stuff
 <style scoped>
 header {
   line-height: 1.5;
+}
+
+.hidden{
+  visibility: hidden;
 }
 
 .logo {
@@ -76,6 +123,7 @@ header {
 
 
 <!-- 
+
 npm run build
 npm run dev 
 node REST.js
