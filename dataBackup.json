@@ -1,64 +1,64 @@
 {
-  "accounts": [
-      {
-          "id": 1,
-          "accountHolder": "John Doe",
-          "bankName": "Bank of America",
-          "accountNumber": "123456789",
-          "routingNumber": "987654321",
-          "accountType": "Checking",
-          "phone": "+44 20 7946 0958",
-          "email": "john.doe@example.com",
-          "branch": "Downtown",
-          "balance": 5000.00
-      },
-      {
-          "id": 2,
-          "accountHolder": "Jane Smith",
-          "bankName": "Chase Bank",
-          "accountNumber": "234567890",
-          "routingNumber": "876543210",
-          "accountType": "Savings",
-          "phone": "+44 113 123 4567",
-          "email": "jane.smith@example.com",
-          "branch": "Uptown",
-          "balance": 7500.50
-      },
-      {
-          "id": 3,
-          "accountHolder": "Emily Johnson",
-          "bankName": "Wells Fargo",
-          "accountNumber": "345678901",
-          "routingNumber": "765432109",
-          "accountType": "Checking",
-          "phone": "+44 161 123 4567",
-          "email": "emily.johnson@example.com",
-          "branch": "Midtown",
-          "balance": 3000.75
-      },
-      {
-          "id": 4,
-          "accountHolder": "Michael Brown",
-          "bankName": "Citi Bank",
-          "accountNumber": "456789012",
-          "routingNumber": "654321098",
-          "accountType": "Savings",
-          "phone": "+44 20 7946 0950",
-          "email": "michael.brown@example.com",
-          "branch": "Suburb",
-          "balance": 1500.20
-      },
-      {
-          "id": 5,
-          "accountHolder": "Sarah Davis",
-          "bankName": "PNC Bank",
-          "accountNumber": "567890123",
-          "routingNumber": "543210987",
-          "accountType": "Checking",
-          "phone": "+44 151 123 4567",
-          "email": "sarah.davis@example.com",
-          "branch": "City Center",
-          "balance": 9000.00
-      }
-  ]
-}
+    "accounts": [
+        {
+            "id": 1,
+            "accountHolder": "John Doe",
+            "bankName": "Bank of America",
+            "accountNumber": "123456789",
+            "routingNumber": "987654321",
+            "accountType": "Checking",
+            "phone": "+44 20 7946 0958",
+            "email": "john.doe@example.com",
+            "branch": "Downtown",
+            "balance": 5000.00
+        },
+        {
+            "id": 2,
+            "accountHolder": "Jane Smith",
+            "bankName": "Chase Bank",
+            "accountNumber": "234567890",
+            "routingNumber": "876543210",
+            "accountType": "Savings",
+            "phone": "+44 113 123 4567",
+            "email": "jane.smith@example.com",
+            "branch": "Uptown",
+            "balance": 7500.50
+        },
+        {
+            "id": 3,
+            "accountHolder": "Emily Johnson",
+            "bankName": "Wells Fargo",
+            "accountNumber": "345678901",
+            "routingNumber": "765432109",
+            "accountType": "Checking",
+            "phone": "+44 161 123 4567",
+            "email": "emily.johnson@example.com",
+            "branch": "Midtown",
+            "balance": 3000.75
+        },
+        {
+            "id": 4,
+            "accountHolder": "Michael Brown",
+            "bankName": "Citi Bank",
+            "accountNumber": "456789012",
+            "routingNumber": "654321098",
+            "accountType": "Savings",
+            "phone": "+44 20 7946 0950",
+            "email": "michael.brown@example.com",
+            "branch": "Suburb",
+            "balance": 1500.20
+        },
+        {
+            "id": 5,
+            "accountHolder": "Sarah Davis",
+            "bankName": "PNC Bank",
+            "accountNumber": "567890123",
+            "routingNumber": "543210987",
+            "accountType": "Checking",
+            "phone": "+44 151 123 4567",
+            "email": "sarah.davis@example.com",
+            "branch": "City Center",
+            "balance": 9000.00
+        }
+    ]
+  }

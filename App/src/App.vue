@@ -13,63 +13,36 @@ async function checkAccounts(event) {
     .catch( error =>  console.log(error));
 }
 function verifyAcc(event) {
-  let nameID = document.getElementById('nameID').value
-  let accNumID = document.getElementById('accNumID').value
-  
-  let searchdata = {
-    name: nameID,
-    accNum: accNumID
-  }
-  console.log(nameID)
-  console.log(accNumID)
-  console.log(searchdata)
+  let nameID = document.getElementById('nameID').value;
+  let accNumID = document.getElementById('accNumID').value;
 
-  axios.get("http://localhost:5000/:id", {
-    params: {
-      id: '1'
-    }
-  })
-  .then((result) => {
-    console.log('Fulfilled'); 
-
-    console.log(result)
+  axios.get("http://localhost:5000/"+nameID+"/"+accNumID)
+  .then(result => {
+    console.log('Valid Account'); 
     console.log(result.data)
+    var section = document.getElementById("accountSect")
+    //Reformat when needed
+    section.innerHTML += JSON.stringify(result.data)
+    document.getElementById("changeSect").classList.remove("hidden")
   })
   .catch( error =>  console.log(error));
 }
 
+// Processes the PUT requests from API
 function changeDetails(event) {
-  console.log(document.getElementById("change").value);
-  alert("Are you sure?");
+  console.log(document.getElementById("change").id);
+  var option = document.getElementById("change").id
+
+  //Needs ID from json
+  axios.get("http://localhost:5000/"+option+"/")
+  .then((result) => {
+
+    //Update HTML with new JSON
+    alert("Are you sure?");
+  })
+  .catch( error =>  console.log(error));
 }
-</script>
-
-<!-- <script>
-import axios from 'axios';
-
-document.getElementById("nameID")
-
-export default {
-  name:'accountdetails',
-    // Fetches posts when the component is created.
-  created() {
-  axios.get(`http://127.0.0.1:5000/`)
-    .then(response => {
-      // JSON responses are automatically parsed.
-      this.posts = response.data
-    })
-    .catch(e => {
-      this.errors.push(e)
-    })
-  },
-  data() {
-    return {
-      errors: []
-    }
-  },
-
-}
-</script> -->
+</script> 
 
 --HTML Stuff
 <template>
@@ -79,17 +52,20 @@ export default {
 	  <input id="nameID"> Name </input>
 	  <input id="accNumID">Account number</input>
     <button id="verifyBtn" @click="verifyAcc">Verify</button>
-    <div id="accountSect" class="hidden">
-      {{ info }}
-    </div>
-    <!-- Dropdown of options -->
+    <button id="verifyBtn" @click="checkAccounts">test</button>
+    
     <div id="changeSect" class="hidden">
+      <div id="accountSect">
+      </div>
+      <!-- Dropdown of options -->
+      <p>
+        Select the detail you'd like to change and type in the change
+      </p>
       <select id="Accountholder options">
-        <option id="accountName">Account Name</option>
-        <option id="accountType">Account Type</option>
-        <option id="dateOfBirth">DoB</option>
-        <option id="email">email</option>
-        <option id="phone">phone</option>
+        <option id="name">Account Name</option>
+        <option id="accNum">Account Number</option>
+        <option id="email">Email Address</option>
+        <option id="phone">Phone Number</option>
       </select>
       <input id="change">Enter the change</input>
       <button id="changeBtn" @click="changeDetails">

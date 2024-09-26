@@ -8,28 +8,11 @@ let corsOptions = {
     origin: [ 'http://localhost:5173']
 };
 
-// Gets all the users and puts them into data
-app.get('/', cors(corsOptions), function (req, res) {
-    fs.readFile( __dirname + "/" + "data.json", 'utf8', function (err, data) {
-        res.end( data );
-    });
-})
-
 var bodyParser = require('body-parser')
 app.use(bodyParser.json() );      
 app.use(bodyParser.urlencoded({  extended: true }));
 
 app.use(cors());
-
-app.get('/:id', cors(corsOptions), function (req, res) {
-    fs.readFile( __dirname + "/" + "data.json", 'utf8', function (err, data) {
-        var users = JSON.parse( data );
-        var id = req.params.id;
-        console.log(id);
-        console.log(users.accounts[2]);
-        res.end(JSON.stringify(users.accounts[id-1]));
-    });
-})
 
 //Returns a valid user with the same Name and account number
 app.get('/:name/:accNum', cors(corsOptions), function (req, res) {
@@ -48,6 +31,21 @@ app.get('/:name/:accNum', cors(corsOptions), function (req, res) {
     });
 })
 
+app.get('/:id', cors(corsOptions), function (req, res) {
+    fs.readFile( __dirname + "/" + "data.json", 'utf8', function (err, data) {
+        var users = JSON.parse( data );
+        var id = req.params.id
+        res.end(JSON.stringify(users.accounts[id-1]));
+    });
+})
+
+// Gets all the users and puts them into data
+app.get('/', cors(corsOptions), function (req, res) {
+    fs.readFile( __dirname + "/" + "data.json", 'utf8', function (err, data) {
+        res.end( data );
+    });
+})
+
 // Updates everything based on ID with body DONT USE
 app.put("/:id", function(req, res) {
     fs.readFile( __dirname + "/" + "data.json", 'utf8', function (err, data) {
@@ -59,18 +57,20 @@ app.put("/:id", function(req, res) {
 })
 
 // Name update
-app.put("/:name/:id", function(req, res) {
+app.put("/name/:name/:id", async function(req, res) {
+    var id = req.params.id;
+
     fs.readFile( __dirname + "/" + "data.json", 'utf8', function (err, data) {
         var users = JSON.parse( data );
-        var id = req.params.id;
         var newName = req.params.name;
         users.accounts[id-1].name = newName;
-        res.end();
+        
+        res.end(JSON.stringify(users.accounts[id-1].name));
     })
 })
 
 // Account number update
-app.put("/:accNum/:id", function(req, res) {
+app.put("/accNum/:accNum/:id", function(req, res) {
     fs.readFile( __dirname + "/" + "data.json", 'utf8', function (err, data) {
         var users = JSON.parse( data );
         var id = req.params.id;
@@ -81,7 +81,7 @@ app.put("/:accNum/:id", function(req, res) {
 })
 
 // Email update
-app.put("/:email/:id", function(req, res) {
+app.put("/email/:email/:id", function(req, res) {
     fs.readFile( __dirname + "/" + "data.json", 'utf8', function (err, data) {
         var users = JSON.parse( data );
         var id = req.params.id;
@@ -92,7 +92,7 @@ app.put("/:email/:id", function(req, res) {
 })
 
 // Phone number update
-app.put("/:phone/:id", function(req, res) {
+app.put("/phone/:phone/:id", async function(req, res) {
     fs.readFile( __dirname + "/" + "data.json", 'utf8', function (err, data) {
         var users = JSON.parse( data );
         var id = req.params.id;
