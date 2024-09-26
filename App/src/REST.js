@@ -1,9 +1,15 @@
 var express = require('express');
+var fs = require('fs');
+var cors = require('cors')
+
 var app = express();
-var fs = require("fs");
+
+let corsOptions = {
+    origin: [ 'http://localhost:5173']
+};
 
 // Gets all the users and puts them into data
-app.get('/', function (req, res) {
+app.get('/', cors(corsOptions), function (req, res) {
     fs.readFile( __dirname + "/" + "data.json", 'utf8', function (err, data) {
         res.end( data );
     });
@@ -12,16 +18,10 @@ app.get('/', function (req, res) {
 var bodyParser = require('body-parser')
 app.use(bodyParser.json() );      
 app.use(bodyParser.urlencoded({  extended: true }));
-app.use(function(req, res, next) {
-    res.header('Access-Control-Allow-Origin', 'http://localhost:5173');
-    res.header(
-      'Access-Control-Allow-Headers',
-      'Origin, X-Requested-With, Content-Type, Accept'
-    );
-    next();
-  });
 
-app.get('/:id', function (req, res) {
+app.use(cors());
+
+app.get('/:id', cors(corsOptions), function (req, res) {
     fs.readFile( __dirname + "/" + "data.json", 'utf8', function (err, data) {
         var users = JSON.parse( data );
         var id = req.params.id;
@@ -31,7 +31,8 @@ app.get('/:id', function (req, res) {
     });
 })
 
-app.get('/:name/:accNum', function (req, res) {
+//Returns a valid user with the same Name and account number
+app.get('/:name/:accNum', cors(corsOptions), function (req, res) {
     fs.readFile( __dirname + "/" + "data.json", 'utf8', function (err, data) {
         var users = JSON.parse( data );
         var name = req.params.name;   

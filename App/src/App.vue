@@ -4,31 +4,38 @@ import HelloWorld from './components/HelloWorld.vue'
 import TheWelcome from './components/TheWelcome.vue'
 import axios from 'axios';
 
-// function updateDetails(params) {
-//   axios.get("http://127.0.0.1:5000/")
-//   .then(function(response){
-//     console.log(response);
-//     alert(response);
-//   })
-//   .catch(function (error) {
-//         console.log(error);
-//   })
-// }
+async function checkAccounts(event) {
+  axios.get("http://localhost:5000/")
+    .then(result => {
+      console.log('Fulfilled'); 
+      console.log(result.data)
+    })
+    .catch( error =>  console.log(error));
+}
+function verifyAcc(event) {
+  let nameID = document.getElementById('nameID').value
+  let accNumID = document.getElementById('accNumID').value
+  
+  let searchdata = {
+    name: nameID,
+    accNum: accNumID
+  }
+  console.log(nameID)
+  console.log(accNumID)
+  console.log(searchdata)
 
-async function verifyAcc(event) {
-  const result = await axios
-                    .get("http://localhost:5000/")
-                    .then(result => console.log('Fulfilled'))
-                    .catch( error =>  console.log(error));
-  console.log(result.data)
-  // .then(function(response){
-  //   console.log(response);
-  //   var users = response.data;
-  //   alert(response);
-  // })
-  // .catch(function (error) {
-  //       console.log(error);
-  // })
+  axios.get("http://localhost:5000/:id", {
+    params: {
+      id: '1'
+    }
+  })
+  .then((result) => {
+    console.log('Fulfilled'); 
+
+    console.log(result)
+    console.log(result.data)
+  })
+  .catch( error =>  console.log(error));
 }
 
 function changeDetails(event) {
