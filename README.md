@@ -28,3 +28,4 @@ Your task is to allow merchants to automatically update their bank account detai
 5. User Inputs in the text beside the changed value, click on the button
 6. Details should now be updated
 
+*Only used ChatGPT to generate dataset
